@@ -1,0 +1,23 @@
+[
+  {
+    "anomaly_type": "conflicting_exclusive_segments",
+    "entity_id": "CUS-000001",
+    "details": "Customer forced into both VIP and Dormant segments"
+  },
+  {
+    "anomaly_type": "consent_suppression_violation",
+    "entity_id": "CUS-000011",
+    "channel": "email",
+    "details": "Action delivered despite explicit email_opt_in = False"
+  },
+  {
+    "anomaly_type": "return_not_netted",
+    "entity_id": "ORD-2026-000005",
+    "details": "Returned order amount not deducted during aggregation"
+  },
+  {
+    "anomaly_type": "attribution_mismatch",
+    "entity_id": "OUT-2026-999999",
+    "details": "Outcome logged for customer CUS-000002 for an unassigned action"
+  }
+]

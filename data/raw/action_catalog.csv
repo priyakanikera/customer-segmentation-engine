@@ -1,0 +1,4 @@
+action_id,action_name,target_channel,target_segment
+ACTN-2026-000001,VIP Concierge Call,support_call,SEG-2026-000001
+ACTN-2026-000002,Winback Email Discount,email,SEG-2026-000002
+ACTN-2026-000003,Retention SMS Perk,sms,SEG-2026-000002

@@ -1,0 +1,4 @@
+segment_id,segment_name,rule_criteria,is_exclusive
+SEG-2026-000001,VIP High-Spender,"{""min_spend"": 500, ""min_orders"": 2}",True
+SEG-2026-000002,At-Risk Dormant,"{""max_orders"": 1, ""days_inactive"": 60}",True
+SEG-2026-000003,High Service Cost,"{""min_cost_to_serve"": 300}",False
