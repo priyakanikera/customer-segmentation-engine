@@ -1,0 +1,59 @@
+{
+  "primary_key_and_duplicate_checks": {
+    "customer_pk_unique": true,
+    "product_pk_unique": true,
+    "order_pk_unique": true,
+    "order_line_pk_unique": true,
+    "event_pk_unique": true,
+    "no_duplicate_customers": true,
+    "no_duplicate_orders": true
+  },
+  "foreign_key_checks": {
+    "order_cust_valid": true,
+    "line_order_valid": true,
+    "line_product_valid": true,
+    "event_cust_valid": true,
+    "support_cust_valid": true,
+    "outcome_cust_valid": true
+  },
+  "enum_checks": {
+    "lifecycle_valid": true,
+    "order_status_valid": true,
+    "event_channel_valid": true,
+    "outcome_status_valid": true
+  },
+  "date_ordering_checks": {
+    "orders_after_customer_created": true,
+    "events_after_customer_created": true,
+    "support_closed_after_opened": true
+  },
+  "arithmetic_reconciliation": {
+    "order_lines_exact": true,
+    "orders_reconciled": true
+  },
+  "detected_anomalies": [
+    {
+      "anomaly_type": "conflicting_exclusive_segments",
+      "entity_id": "CUS-000001",
+      "status": "FLAGGED"
+    },
+    {
+      "anomaly_type": "consent_suppression_violation",
+      "entity_id": "CUS-000011",
+      "channel": "email",
+      "status": "FLAGGED"
+    },
+    {
+      "anomaly_type": "return_not_netted",
+      "entity_id": "ORD-2026-000005",
+      "customer_id": "CUS-000001",
+      "status": "FLAGGED"
+    },
+    {
+      "anomaly_type": "attribution_mismatch",
+      "entity_id": "OUT-2026-999999",
+      "status": "FLAGGED"
+    }
+  ],
+  "anomaly_detection_recall": "4/4"
+}

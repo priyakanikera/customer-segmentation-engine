@@ -1,5 +1,3 @@
-import os
-import json
 import pytest
 from src.generator import generate_synthetic_dataset
 from src.segmenter import run_segmentation
@@ -25,8 +23,10 @@ def setup_pipeline(tmp_path_factory):
 
 def test_referential_integrity_and_keys(setup_pipeline):
     report = validate_dataset(data_dir=setup_pipeline)
-    assert all(report["primary_key_checks"].values()), "All primary keys must be strictly unique"
+    assert all(report["primary_key_and_duplicate_checks"].values()), "Primary keys must be unique with no duplicate rows"
     assert all(report["foreign_key_checks"].values()), "Foreign key integrity violated"
+    assert all(report["enum_checks"].values()), "Invalid enum values detected"
+    assert all(report["date_ordering_checks"].values()), "Chronological date ordering violated"
 
 
 def test_arithmetic_reconciliation(setup_pipeline):
@@ -41,4 +41,6 @@ def test_ground_truth_anomaly_detection(setup_pipeline):
     types = [a["anomaly_type"] for a in anomalies]
     assert "conflicting_exclusive_segments" in types
     assert "consent_suppression_violation" in types
+    assert "return_not_netted" in types
     assert "attribution_mismatch" in types
+    assert report["anomaly_detection_recall"] == "4/4"

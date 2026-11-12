@@ -1,0 +1,55 @@
+{
+  "provenance": "100% synthetic deterministic generation (no external third-party PII or restricted datasets)",
+  "generator_command": "python3 run_pipeline.py --seed 20261022 --customers 50000 --orders 200000 --events 1000000",
+  "fixed_seed": 20261022,
+  "artifacts": {
+    "raw/action_catalog.csv": {
+      "row_count": 3,
+      "sha256": "6c54f3dba996660d57ab470f2fe8bc13ce2ba83739846b5c525adbd9f0fdb641"
+    },
+    "raw/consent.csv": {
+      "row_count": 50000,
+      "sha256": "e16a9ea64af8d638b8ad314b1194d4ce09ec83a0496c0d057cb8193b691d1367"
+    },
+    "raw/customers.csv": {
+      "row_count": 50000,
+      "sha256": "8c0b3b9496746b9810cb8732b36fb0083e3baf412b6a9c94d4d4182b5fdbd3a7"
+    },
+    "raw/engagement_events.csv": {
+      "row_count": 1000000,
+      "sha256": "24c151e33ee72a6c3ba55b68574dd49f00f9f852d93f01b7a5b63e23815b569c"
+    },
+    "raw/order_lines.csv": {
+      "row_count": 400090,
+      "sha256": "9f1accde9870c46a7dd6213ebb918dc5d438882721e484be493957d58c2c3a7a"
+    },
+    "raw/orders.csv": {
+      "row_count": 200000,
+      "sha256": "0ffa37fd0889dad11b96014f9f0d36e429cd5673ffa1b9218ed794e18c89d403"
+    },
+    "raw/products.csv": {
+      "row_count": 50,
+      "sha256": "da0b07688b7f98eb636b496066ee0b269ddab237cbfd5ac0823a39a24674dcb0"
+    },
+    "raw/segment_rules.csv": {
+      "row_count": 3,
+      "sha256": "aad61b9385518d99342bc706534566a60486df2107ec0e5008f9360a56e0f7c2"
+    },
+    "raw/support_cases.csv": {
+      "row_count": 7500,
+      "sha256": "8f0d3f849f5fcaf97a990f5d994d9323304b77ba895ca7ea96910b1396d05ecd"
+    },
+    "processed/action_outcomes.csv": {
+      "row_count": 55763,
+      "sha256": "12b2216dcd05bc876c34e570676363ca854a59427a47f83c1e15766e0922c923"
+    },
+    "processed/customer_features.csv": {
+      "row_count": 50000,
+      "sha256": "4b9cc45afedb5d13e20c6f5029821b72d465aa0385d02d8212b57d49226e753c"
+    },
+    "processed/segment_membership.csv": {
+      "row_count": 49626,
+      "sha256": "0ea70822168f3856049496174e8d9ed012f266fff4b073d1de71a856526c8faa"
+    }
+  }
+}
